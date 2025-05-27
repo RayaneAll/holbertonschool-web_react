@@ -1,4 +1,3 @@
-// Define the Student interface
 export interface Student {
   firstName: string;
   lastName: string;
@@ -6,7 +5,6 @@ export interface Student {
   location: string;
 }
 
-// Create two student objects
 const student1: Student = {
   firstName: "John",
   lastName: "Doe",
@@ -21,16 +19,12 @@ const student2: Student = {
   location: "San Francisco"
 };
 
-// Store students in an array
 export const studentsList: Array<Student> = [student1, student2];
 
-// Render table function
 const renderTable = (students: Array<Student>): void => {
-  // Create table element
   const table = document.createElement('table');
   const tableBody = document.createElement('tbody');
   
-  // Create header row
   const headerRow = document.createElement('tr');
   const firstNameHeader = document.createElement('th');
   const locationHeader = document.createElement('th');
@@ -42,7 +36,6 @@ const renderTable = (students: Array<Student>): void => {
   headerRow.appendChild(locationHeader);
   tableBody.appendChild(headerRow);
   
-  // Create a row for each student
   students.forEach((student) => {
     const row = document.createElement('tr');
     const firstNameCell = document.createElement('td');
@@ -56,13 +49,10 @@ const renderTable = (students: Array<Student>): void => {
     tableBody.appendChild(row);
   });
   
-  // Append table body to table
   table.appendChild(tableBody);
-  // Append table to the document body
   document.body.appendChild(table);
 };
 
-// Render the table when DOM content is loaded
 document.addEventListener('DOMContentLoaded', () => {
   renderTable(studentsList);
 });
